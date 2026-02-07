@@ -1,13 +1,251 @@
-body {
-    font-family: system-ui, sans-serif;
-    max-width: 600px;
-    margin: 60px auto;
-    padding: 0 20px;
-    line-height: 1.6;
+:root {
+  --main-color: #e6ff00;
 }
 
-button {
-    padding: 10px 16px;
-    font-size: 16px;
-    cursor: pointer;
+body {
+    font-family: system-ui, sans-serif;
+    color: white;
+    background: linear-gradient(to right, #000000, #737373);
+    min-height: 100vh;
+    margin: 0;
 }
+
+main {
+    max-width: 700px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+
+/* TOPBAR */
+
+.topbar {
+    position: sticky;
+    top: 0;
+
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(to right, #000000, #3f3f3f);
+
+    z-index: 1000;
+}
+
+.nav {
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 20px;
+}
+
+.logo {
+    font-family: 'Petit Formal Script', cursive;
+    font-size: 28px;
+    color: var(--main-color);
+    text-decoration: none;
+
+    text-shadow:
+        0 0 4px var(--main-color),
+        0 0 8px #ccff00,
+        0 0 16px #80ff00;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.links a:hover {
+    color: var(--main-color);
+}
+
+.links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: var(--main-color);
+    transition: width 0.25s ease;
+}
+
+.links a:hover::after {
+    width: 100%;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.burger span {
+    width: 26px;
+    height: 3px;
+    background: white;
+    display: block;
+    border-radius: 2px;
+}
+
+
+/* SIDEBAR */
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    right: -280px; /* hidden offscreen */
+    width: 280px;
+    height: 100vh;
+
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(12px);
+
+    padding: 80px 30px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    transition: right 0.35s ease;
+    z-index: 2000;
+}
+
+#sidebar a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    width: fit-content;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+#sidebar a:hover {
+    color: var(--main-color);
+}
+
+#sidebar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: var(--main-color);
+    transition: width 0.25s ease;
+}
+
+#sidebar a:hover::after {
+    width: 100%;
+}
+
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+
+    z-index: 1500;
+}
+
+#sidebar.open {
+    right: 0;
+}
+
+#overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* TITLE */
+
+.hero-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+
+    /* top left right bottom */
+    padding: 60px 0px 0px 20px;
+    max-width: 100%;
+    margin: 20px 0px 0px 0px;
+}
+
+.hero-img {
+    width: clamp(180px, 15vw, 240px);
+    height: auto;
+    margin: 0;
+}
+
+.hero {
+    text-align: center;
+
+    /* BIG text */
+    font-size: clamp(60px, 8vw, 128px);
+    font-weight: 10;
+    font-family: 'Petit Formal Script', cursive;
+    /* font-family: 'Dancing Script', cursive; */
+    /* font-family: 'Pinyon Script', cursive; */
+
+    /* nice clean font rendering */
+    letter-spacing: 1px;
+
+    margin: 0;
+
+    /* readable over gradient */
+    color: white;
+    text-shadow:
+        0 0 0.05em var(--main-color),
+        0 0 0.1em #fffb00,
+        0 0 0.2em #ffea00,
+        0 0 0.4em #c8ff00,
+        0 0 0.8em #80ff00;
+}
+
+
+@media (max-width: 1200px) {
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero {
+        white-space: normal;
+
+        font-size: clamp(40px, 20vw, 128px);
+    }
+
+    .hero-img {
+        width: clamp(200px, 25vw, 240px);
+        margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 850px) {
+    .links {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
