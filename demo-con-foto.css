@@ -2,41 +2,42 @@
 
 
 .grid {
-    display: grid;
-    grid-template-columns: 50vw 50vw;
-    grid-template-rows: 50% 50%;
-    height: calc(100vh - var(--topbar-height));
-    max-height: calc(100vh - var(--topbar-height));
-    min-height: clamp(500px, 60vw, 750px); /* minimum total height */
+	display: grid;
+	grid-template-columns: 50vw 50vw;
+	grid-template-rows: 50% 50%;
+	height: calc(100vh - var(--topbar-height));
+	max-height: calc(100vh - var(--topbar-height));
+	/* min-height: clamp(700px, 60vw, 750px); */
+	min-height: 750px;
 }
 
 .cell {
-    position: relative;
-    overflow: hidden;
-    display: flex;
+	position: relative;
+	overflow: hidden;
+	display: flex;
 }
 
 /* Base style for all corner images */
 .cell img {
-    width: clamp(80px, 15vw, 200px);
-    height: auto;
+	width: clamp(80px, 15vw, 200px);
+	height: auto;
 }
 
 .top-left {
-    justify-content: flex-start;
-    align-items: flex-start;
+	justify-content: flex-start;
+	align-items: flex-start;
 }
 .top-right {
-    justify-content: flex-end;
-    align-items: flex-start;
+	justify-content: flex-end;
+	align-items: flex-start;
 }
 .bottom-left {
-    justify-content: flex-start;
-    align-items: flex-end;
+	justify-content: flex-start;
+	align-items: flex-end;
 }
 .bottom-right {
-    justify-content: flex-end;
-    align-items: flex-end;
+	justify-content: flex-end;
+	align-items: flex-end;
 }
 
 
@@ -44,28 +45,51 @@
 
 main a {
 	font-size: clamp(32px, 4cqw, 58px);
-	line-height: 1.6;
-	margin: 0;
-	color: var(--text-color);
 	font-family: 'Petit Formal Script', cursive;
-	font-weight: 1000;
-    position: absolute;
-    text-align: center;
+	
+	text-align: center;
+	line-height: 1.2;
+
+	margin: 0;
+	position: absolute;
+
+	color: white;
+	text-shadow:
+		0 0 0.2em var(--main-color),
+		0 0 0.3em #bbff00,
+		0 0 0.7em #dbff3d,
+		0 0 1.2em #d1ff47;
 }
 
-main a:link {
-	color: var(--text-color);
-}
-main a:visited {
-	color: var(--text-color);
-}
-main a:hover {
-	color: var(--text-color);
-}
-main a:active {
-	color: var(--text-color);
-}
 
+.link-1 {
+	left: 25%;
+	top: 250px;
+}
+.link-2 {
+	right: 10%;
+	top: 250px;
+}
+.link-3 {
+	left: 10%;
+	top: 380px;
+}
+.link-4 {
+	right: 20%;
+	top: 410px;
+}
+.link-5 {
+	left: 45%;
+	top: 520px;
+}
+.link-6 {
+	left: 20%;
+	top: 650px;
+}
+.link-7 {
+	right: 15%;
+	top: 620px;
+}
 
 
 /* ================= RESPONSIVE ================= */
