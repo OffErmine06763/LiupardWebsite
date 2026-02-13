@@ -44,7 +44,7 @@
 /* ================= TEXT ================= */
 
 main a {
-	font-size: clamp(28px, 3cqw, 50px);
+	font-size: clamp(28px, 3cqw, 40px);
 	font-family: 'Petit Formal Script', cursive;
 	
 	text-align: center;
@@ -61,73 +61,68 @@ main a {
 		0 0 1.2em #d1ff47;
 }
 
+main p {
+	font-size: clamp(18px, 2cqw, 24px);
+	font-weight: 700;
+
+	text-align: center;
+	line-height: 1.2;
+
+	margin: 0;
+	width: 25ch;
+	
+	position: absolute;
+	/* (1440, 0) -> (1200, 40) */
+	top: calc(130px + max(0px, 0px - 40 / 240 * (100vw - 1440px)));
+	left: 50%;
+	transform: translateX(-50%);
+
+	color: var(--text-color);
+}
+
 
 .link-1 {
 	left: 40%;
-	top: 250px;
+	/* (1440, 0) -> (1200, 30) */
+	top: calc(250px + max(0px, 0px - 30 / 240 * (100vw - 1440px)));
 	transform: translateX(-50%);
 }
 .link-2 {
 	right: 38%;
-	top: 250px;
+	/* (1440, 0) -> (1200, 30) */
+	top: calc(250px + max(0px, 0px - 30 / 240 * (100vw - 1440px)));
 	transform: translateX(50%);
 }
 .link-3 {
 	left: 32%;
-	top: 380px;
+	/* (1440, 0) -> (1200, 5) */
+	top: calc(380px + max(0px, 0px - 5 / 240 * (100vw - 1440px)));
 	transform: translateX(-50%);
 }
 .link-4 {
 	right: 40%;
-	top: 410px;
+	/* (1440, 0) -> (1200, 5) */
+	top: calc(410px + max(0px, 0px - 5 / 240 * (100vw - 1440px)));
 	transform: translateX(50%);
 }
 .link-5 {
 	left: 50%;
-	top: 520px;
+	/* (1440, 0) -> (1200, -5) */
+	top: calc(520px - max(0px, 0px - 5 / 240 * (100vw - 1440px)));
 	transform: translateX(-50%);
 }
 .link-6 {
 	left: 35%;
-	top: 650px;
+	/* (1440, 0) -> (1200, -30) */
+	top: calc(650px - max(0px, 0px - 30 / 240 * (100vw - 1440px)));
 	transform: translateX(-50%);
 }
 .link-7 {
 	right: 35%;
-	top: 620px;
+	/* (1440, 0) -> (1200, 5) */
+	top: calc(620px - max(0px, 0px - 5 / 240 * (100vw - 1440px)));
 	transform: translateX(50%);
 }
-
-/* 
-.link-1 {
-	left: clamp(12.5%, 4cqw, 50%);
-	top: 250px;
-}
-.link-2 {
-	right: clamp(5%, 4cqw, 20%);
-	top: 250px;
-}
-.link-3 {
-	left: clamp(5%, 4cqw, 20%);
-	top: 380px;
-}
-.link-4 {
-	right: clamp(10%, 4cqw, 40%);
-	top: 410px;
-}
-.link-5 {
-	left: clamp(40.5%, 4cqw, 45%);
-	top: 520px;
-}
-.link-6 {
-	left: clamp(10%, 4cqw, 40%);
-	top: 650px;
-}
-.link-7 {
-	right: clamp(7.5%, 4cqw, 20%);
-	top: 620px;
-}
-*/
 
 
 /* ================= RESPONSIVE ================= */
@@ -137,39 +132,52 @@ main a {
 		font-size: clamp(20px, 4cqw, 50px);
 	}
 
+	main p {
+		font-size: clamp(16px, 4cqw, 32px);
+		/* (1200, 0) -> (320, 70) */
+		top: calc(130px + max(0px, 0px - 70 / 880 * (100vw - 1200px)));
+	}
+
 	.link-1 {
 		left: 25%;
-		top: 250px;
+		/* (1200, 0) -> (320, 40) */
+		top: calc(250px + max(0px, 0px - 40 / 880 * (100vw - 1200px)));
 		transform: translateX(-50%);
 	}
 	.link-2 {
 		right: 30%;
-		top: 250px;
+		/* (1200, 0) -> (320, 40) */
+		top: calc(250px + max(0px, 0px - 40 / 880 * (100vw - 1200px)));
 		transform: translateX(50%);
 	}
 	.link-3 {
 		left: 25%;
-		top: 380px;
+		/* (1200, 0) -> (320, -30) */
+		top: calc(380px - max(0px, 0px - 30 / 880 * (100vw - 1200px)));
 		transform: translateX(-50%);
 	}
 	.link-4 {
 		right: 25%;
-		top: 410px;
+		/* (1200, 0) -> (320, -30) */
+		top: calc(410px - max(0px, 0px - 30 / 880 * (100vw - 1200px)));
 		transform: translateX(50%);
 	}
 	.link-5 {
 		left: 47%;
-		top: 520px;
+		/* (1200, 0) -> (320, -90) */
+		top: calc(520px - max(0px, 0px - 90 / 880 * (100vw - 1200px)));
 		transform: translateX(-50%);
 	}
 	.link-6 {
 		left: 28%;
-		top: 650px;
+		/* (1200, 0) -> (320, -160) */
+		top: calc(650px - max(0px, 0px - 160 / 880 * (100vw - 1200px)));
 		transform: translateX(-50%);
 	}
 	.link-7 {
 		right: 25%;
-		top: 620px;
+		/* (1200, 0) -> (320, -140) */
+		top: calc(620px - max(0px, 0px - 140 / 880 * (100vw - 1200px)));
 		transform: translateX(50%);
 	}
 
