@@ -1,0 +1,75 @@
+/* ================= IMAGES ================= */
+
+
+.grid {
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 50% 50%;
+    height: calc(100vh - var(--topbar-height));
+    max-height: calc(100vh - var(--topbar-height));
+    min-height: clamp(500px, 60vw, 750px); /* minimum total height */
+}
+
+.cell {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+}
+
+/* Base style for all corner images */
+.cell img {
+    width: clamp(80px, 15vw, 200px);
+    height: auto;
+}
+
+.top-left {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.top-right {
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.bottom-left {
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.bottom-right {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+
+/* ================= TEXT ================= */
+
+main a {
+	font-size: clamp(32px, 4cqw, 58px);
+	line-height: 1.6;
+	margin: 0;
+	color: var(--text-color);
+	font-family: 'Petit Formal Script', cursive;
+	font-weight: 1000;
+    position: absolute;
+    text-align: center;
+}
+
+main a:link {
+	color: var(--text-color);
+}
+main a:visited {
+	color: var(--text-color);
+}
+main a:hover {
+	color: var(--text-color);
+}
+main a:active {
+	color: var(--text-color);
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-height: 600px) {
+
+}

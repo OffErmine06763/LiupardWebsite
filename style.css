@@ -4,6 +4,8 @@
   --glow-color-2: #dbff3d;
   --glow-color-3: #d1ff47;
   --text-color: #d6ff0d;
+
+  --topbar-height: 62px;
 }
 
 body {
@@ -24,6 +26,8 @@ body {
     width: 100%;
     backdrop-filter: blur(10px);
     background: linear-gradient(to right, black, #3f3f3f);
+    
+    height: var(--topbar-height);
 
     z-index: 1000;
 }
