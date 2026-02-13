@@ -44,7 +44,7 @@
 /* ================= TEXT ================= */
 
 main a {
-	font-size: clamp(32px, 4cqw, 58px);
+	font-size: clamp(28px, 3cqw, 50px);
 	font-family: 'Petit Formal Script', cursive;
 	
 	text-align: center;
@@ -63,37 +63,114 @@ main a {
 
 
 .link-1 {
-	left: 25%;
+	left: 40%;
+	top: 250px;
+	transform: translateX(-50%);
+}
+.link-2 {
+	right: 38%;
+	top: 250px;
+	transform: translateX(50%);
+}
+.link-3 {
+	left: 32%;
+	top: 380px;
+	transform: translateX(-50%);
+}
+.link-4 {
+	right: 40%;
+	top: 410px;
+	transform: translateX(50%);
+}
+.link-5 {
+	left: 50%;
+	top: 520px;
+	transform: translateX(-50%);
+}
+.link-6 {
+	left: 35%;
+	top: 650px;
+	transform: translateX(-50%);
+}
+.link-7 {
+	right: 35%;
+	top: 620px;
+	transform: translateX(50%);
+}
+
+/* 
+.link-1 {
+	left: clamp(12.5%, 4cqw, 50%);
 	top: 250px;
 }
 .link-2 {
-	right: 10%;
+	right: clamp(5%, 4cqw, 20%);
 	top: 250px;
 }
 .link-3 {
-	left: 10%;
+	left: clamp(5%, 4cqw, 20%);
 	top: 380px;
 }
 .link-4 {
-	right: 20%;
+	right: clamp(10%, 4cqw, 40%);
 	top: 410px;
 }
 .link-5 {
-	left: 45%;
+	left: clamp(40.5%, 4cqw, 45%);
 	top: 520px;
 }
 .link-6 {
-	left: 20%;
+	left: clamp(10%, 4cqw, 40%);
 	top: 650px;
 }
 .link-7 {
-	right: 15%;
+	right: clamp(7.5%, 4cqw, 20%);
 	top: 620px;
 }
+*/
 
 
 /* ================= RESPONSIVE ================= */
 
-@media (max-height: 600px) {
+@media (max-width: 1200px) {
+	main a {
+		font-size: clamp(20px, 4cqw, 50px);
+	}
+
+	.link-1 {
+		left: 25%;
+		top: 250px;
+		transform: translateX(-50%);
+	}
+	.link-2 {
+		right: 30%;
+		top: 250px;
+		transform: translateX(50%);
+	}
+	.link-3 {
+		left: 25%;
+		top: 380px;
+		transform: translateX(-50%);
+	}
+	.link-4 {
+		right: 25%;
+		top: 410px;
+		transform: translateX(50%);
+	}
+	.link-5 {
+		left: 47%;
+		top: 520px;
+		transform: translateX(-50%);
+	}
+	.link-6 {
+		left: 28%;
+		top: 650px;
+		transform: translateX(-50%);
+	}
+	.link-7 {
+		right: 25%;
+		top: 620px;
+		transform: translateX(50%);
+	}
 
 }
