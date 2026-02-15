@@ -49,13 +49,10 @@ section {
 	flex-direction: column;
 	
 	width: 30vw;
-	/* width: clamp(0, 30vw, 900px); */
+	max-width: 500px;
 	margin: 0;
 
 	align-items: center;
-
-	/* background-color: red; */
-	/* border-style: inset; */
 }
 .item img {
 	width: clamp(180px, 20vw, 220px);
