@@ -8,7 +8,7 @@ section {
 
 	text-align: center;
 
-	font-size: clamp(60px, 8vw, 128px);
+	font-size: clamp(60px, 8vw, 100px);
 	font-weight: 10;
 	font-family: 'Petit Formal Script', cursive;
 	letter-spacing: 1px;
@@ -72,13 +72,81 @@ section {
 }
 
 
+
+.box {
+	position: relative;   /* Creates positioning context */
+	width: 750px;
+	height: 600px;
+
+	justify-self: center;
+}
+
+.hero-mascotte {
+	position: absolute;   /* Positioned relative to .box */
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	text-align: center;
+
+	font-size: 60px;
+	font-weight: 10;
+	font-family: 'Petit Formal Script', cursive;
+	letter-spacing: 1px;
+	margin: 0px;
+	padding: 0px;
+
+	width: 10ch;
+
+	color: white;
+	text-shadow:
+		0 0 0.05em var(--main-color),
+		0 0 0.1em #bbff00,
+		0 0 0.2em #dbff3d,
+		0 0 0.4em #d1ff47;
+}
+
+.box img {
+	height: auto;
+	position: absolute;
+}
+
+.mascotte-img-1 {
+	width: 240px;
+
+	top: 0%;
+	left: 20%;
+}
+.mascotte-img-2 {
+	width: 200px;
+
+	top: 0%;
+	right: 13%;
+}
+.mascotte-img-3 {
+	width: 120px;
+	
+	bottom: 0%;
+	left: 10%;
+}
+.mascotte-img-4 {
+	width: 230px;
+
+	bottom: 3%;
+	right: 20%;
+}
+
+
+
 @media (max-width: 800px) {
 	.hero {
-		text-align: center;
 		font-size: clamp(40px, 20vw, 128px);
 	}
 	.small {
 		font-size: clamp(20px, 15vw, 128px);
+	}
+	.hero-mascotte {
+		font-size: clamp(20px, 15vw, 60px);
 	}
 	
 	.gallery {
@@ -97,4 +165,28 @@ section {
 		margin-top: clamp(6px, 2vw, 14px);
 		font-size: clamp(16px, 3.5vw, 18px);
 	}
+
+
+	.box {
+		width: 95%;
+		height: clamp(0px, 75vw, 600px);
+	}
+
+	.hero-mascotte {
+		font-size: clamp(0px, 7.5vw, 60px);
+	}
+
+	.mascotte-img-1 {
+		width: clamp(0px, 30vw, 240px);
+	}
+	.mascotte-img-2 {
+		width: clamp(0px, 25vw, 200px);
+	}
+	.mascotte-img-3 {
+		width: clamp(0px, 15vw, 120px);
+	}
+	.mascotte-img-4 {
+		width: clamp(0px, 28.75vw, 230px);
+	}
+
 }
